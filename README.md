@@ -111,7 +111,9 @@ DB::table('users')->insertIgnore(
 
 ### Eloquent
 
-You can use UPSERT and INSERT IGNORE queries in Eloquent with the `HasUpsertQueries` trait:
+You can use UPSERT and INSERT IGNORE queries with Eloquent models.
+
+In Laravel 5.5–5.7, this requires the `HasUpsertQueries` trait:
 
 ```php
 class User extends Model
@@ -135,3 +137,5 @@ $builder = new \Staudenmeir\LaravelUpsert\Query\Builder(app('db')->connection())
 
 $builder->from(...)->upsert(...);
 ```
+
+In Eloquent, the `HasUpsertQueries` trait is required for *all* versions of Lumen.
