@@ -105,7 +105,6 @@ class QueryTest extends TestCase
     protected function getBuilder($database)
     {
         $connection = $this->createMock(SqlServerConnection::class);
-        $connection->method('getPdo')->willReturn($this->createMock(PDO::class));
         $grammar = 'Staudenmeir\LaravelUpsert\Query\Grammars\\'.$database.'Grammar';
         $processor = $this->createMock(Processor::class);
 
