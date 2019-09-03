@@ -2,13 +2,9 @@
 
 namespace Tests;
 
-use Illuminate\Database\Query\Processors\Processor;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
-use PDO;
-use Staudenmeir\LaravelUpsert\Connections\SqlServerConnection;
 use Staudenmeir\LaravelUpsert\DatabaseServiceProvider;
-use Staudenmeir\LaravelUpsert\Query\Builder;
 
 class QueryTest extends TestCase
 {
@@ -59,16 +55,6 @@ class QueryTest extends TestCase
         DB::table('users')->upsert(['name' => 'foo', 'active' => true], 'name', []);
     }
 
-    public function testUpsertSqlServer()
-    {
-        $builder = $this->getBuilder('SqlServer');
-        $query = "merge [users] using (values (?)) [laravel_source] ([name]) on [laravel_source].[name] = [users].[name] when matched then update set [name] = [laravel_source].[name] when not matched then insert ([name]) values ([name]);";
-        $bindings = ['foo'];
-        $builder->getConnection()->expects($this->once())->method('affectingStatement')->with($query, $bindings);
-
-        $builder->from('users')->upsert(['name' => 'foo'], 'name');
-    }
-
     public function testInsertIgnore()
     {
         $affected = DB::table('users')->insertIgnore([
@@ -90,25 +76,6 @@ class QueryTest extends TestCase
 
         $this->assertEquals(0, $affected);
         $this->assertEmpty(DB::getQueryLog());
-    }
-
-    public function testInsertIgnoreSqlServer()
-    {
-        $builder = $this->getBuilder('SqlServer');
-        $query = "merge [users] using (values (?)) [laravel_source] ([name]) on [laravel_source].[name] = [users].[name] when not matched then insert ([name]) values ([name]);";
-        $bindings = ['foo'];
-        $builder->getConnection()->expects($this->once())->method('affectingStatement')->with($query, $bindings);
-
-        $builder->from('users')->insertIgnore(['name' => 'foo'], 'name');
-    }
-
-    protected function getBuilder($database)
-    {
-        $connection = $this->createMock(SqlServerConnection::class);
-        $grammar = 'Staudenmeir\LaravelUpsert\Query\Grammars\\'.$database.'Grammar';
-        $processor = $this->createMock(Processor::class);
-
-        return new Builder($connection, new $grammar, $processor);
     }
 
     protected function getPackageProviders($app)
