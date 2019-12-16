@@ -66,7 +66,7 @@ Schema::create('stats', function (Blueprint $table) {
     $table->unsignedInteger('post_id');
     $table->date('date');
     $table->unsignedInteger('views');
-    $table->unique(['post_id', 'date']);
+    $table->primary(['post_id', 'date']);
 });
 ```
 
