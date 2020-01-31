@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/staudenmeir/laravel-upsert.svg?branch=master)](https://travis-ci.org/staudenmeir/laravel-upsert)
+![CI](https://github.com/staudenmeir/laravel-upsert/workflows/CI/badge.svg)
 [![Code Coverage](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/staudenmeir/laravel-upsert/v/stable)](https://packagist.org/packages/staudenmeir/laravel-upsert)
