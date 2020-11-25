@@ -10,10 +10,9 @@ jobs:
       matrix:
         php: [7.4, 7.3]
         database: [mysql, pgsql, sqlite, sqlsrv]
-        release: [stable, lowest]
+        release: [lowest]
         include:
           - php: 7.4
-            release: stable
             coverage: xdebug
 
     services:
