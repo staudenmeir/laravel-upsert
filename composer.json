@@ -9,11 +9,10 @@
         }
     ],
     "require": {
-        "php": "^7.2",
+        "php": "^7.2|^8.0",
         "illuminate/database": "^6.0"
     },
     "require-dev": {
-        "laravel/homestead": "^10.0",
         "orchestra/testbench": "^4.0"
     },
     "autoload": {

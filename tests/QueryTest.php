@@ -50,7 +50,12 @@ class QueryTest extends TestCase
     public function testUpsertWithEmptyColumns()
     {
         $this->expectException(QueryException::class);
-        $this->expectExceptionMessageRegExp('/unique/i');
+
+		if (method_exists($this, 'expectExceptionMessageMatches')) {
+			$this->expectExceptionMessageMatches('/unique/i');
+		} else {
+			$this->expectExceptionMessageRegExp('/unique/i');
+		}
 
         DB::table('users')->upsert(['name' => 'foo', 'active' => true], 'name', []);
     }
