@@ -1,5 +1,5 @@
 {
-    "name": "staudenmeir/laravel-upsert",
+    "name": "jitendrajp/laravel-upsert",
     "description": "Laravel UPSERT and INSERT IGNORE queries",
     "license": "MIT",
     "authors": [
