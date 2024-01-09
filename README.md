@@ -5,7 +5,7 @@
 [![License](https://poser.pugx.org/staudenmeir/laravel-upsert/license)](https://packagist.org/packages/staudenmeir/laravel-upsert)
 
 > [!NOTE]
-> The package's code has been merged into Laravel 8.10+ and upsert queries are now supported natively. 
+> The package's code has been merged into Laravel 8.10+ and UPSERT queries are now supported natively. 
 
 ## Introduction
 
