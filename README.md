@@ -1,14 +1,17 @@
-![CI](https://github.com/staudenmeir/laravel-upsert/workflows/CI/badge.svg)
 [![Code Coverage](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/?branch=master)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/staudenmeir/laravel-upsert/?branch=master)
 [![Latest Stable Version](https://poser.pugx.org/staudenmeir/laravel-upsert/v/stable)](https://packagist.org/packages/staudenmeir/laravel-upsert)
 [![Total Downloads](https://poser.pugx.org/staudenmeir/laravel-upsert/downloads)](https://packagist.org/packages/staudenmeir/laravel-upsert)
 [![License](https://poser.pugx.org/staudenmeir/laravel-upsert/license)](https://packagist.org/packages/staudenmeir/laravel-upsert)
 
+> [!NOTE]
+> The package's code has been merged into Laravel 8.10+ and upsert queries are now supported natively. 
+
 ## Introduction
+
 This Laravel extension adds support for INSERT & UPDATE (UPSERT) and INSERT IGNORE to the query builder and Eloquent.
 
-Supports Laravel 5.5+.
+Supports Laravel 5.5–8.9.
 
 ## Compatibility
 
